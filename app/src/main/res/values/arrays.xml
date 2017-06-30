@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="priorities">
+        <item>Urgent</item>
+        <item>Event</item>
+        <item>General</item>
+    </array>
+</resources>
