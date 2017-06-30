@@ -35,7 +35,7 @@ public class NotedContentProvider extends ContentProvider {
     public static final UriMatcher sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
 
-    public static final Uri CONTENT_URI = Uri.parse(" content://" + AUTHORITY + "/" + BASE_PATH);
+    public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH);
 
     static {
         sURIMatcher.addURI(AUTHORITY, BASE_PATH, NOTES);
