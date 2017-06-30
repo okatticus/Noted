@@ -61,6 +61,7 @@ public class NotedDetailActivity extends Activity {
     private void fillData(Uri uri) {
         String[] projection = {TableClass.COLUMN_TITLE,
                 TableClass.COLUMN_DESCRIPTION,
+                TableClass.COLUMN_CATEGORY,
                 TableClass.COLUMN_ID};
         Cursor cursor = getContentResolver().query(uri, projection, null, null, null);
         if (cursor != null) {
