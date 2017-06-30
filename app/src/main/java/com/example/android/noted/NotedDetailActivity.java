@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,6 +35,7 @@ public class NotedDetailActivity extends Activity {
         mCategory = (Spinner) findViewById(R.id.spinner);
         mTitleText = (EditText) findViewById(R.id.editText);
         mBodyText = (EditText) findViewById(R.id.editText3);
+       // Log.v("NotedDetailActivity",mCategory.toString());
         Button confirmButton = (Button) findViewById(R.id.note_edit_button);
 
         Bundle extras = getIntent().getExtras();//retrieve the data
@@ -64,6 +66,7 @@ public class NotedDetailActivity extends Activity {
         if (cursor != null) {
             cursor.moveToFirst();
             String category = cursor.getString(cursor.getColumnIndexOrThrow(TableClass.COLUMN_CATEGORY));
+         //   Log.v("Category: ",category);
             for (int i = 0; i < mCategory.getCount(); i++) {
                 String s = (String) mCategory.getItemAtPosition(i);
                 if (s.equalsIgnoreCase(category)) {
@@ -101,9 +104,10 @@ public class NotedDetailActivity extends Activity {
             return;
         ContentValues values = new ContentValues();
         values.put(TableClass.COLUMN_CATEGORY, category);
-        values.put(TableClass.COLUMN_TITLE, true);
+        values.put(TableClass.COLUMN_TITLE, title);
         values.put(TableClass.COLUMN_DESCRIPTION, description);
-
+        Log.v("DetailActivity",category);
+        Log.v("DetailActivity",title);
         if (uri == null) {
             uri = getContentResolver().insert(
                     NotedContentProvider.CONTENT_URI, values);

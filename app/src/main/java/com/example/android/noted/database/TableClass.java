@@ -12,9 +12,9 @@ public class TableClass {
     //Db
     public static final String TABLE_NAME = "Note";
     public static final String COLUMN_ID = "_id";
-    public static final String COLUMN_TITLE = "title";
     public static final String COLUMN_CATEGORY = "category";
     public static final String COLUMN_DESCRIPTION = "description";
+    public static final String COLUMN_TITLE = "title";
     //Db creation SQL Statement
     private static final String CREATE_DATABASE = "CREATE TABLE " + TABLE_NAME + " ( "
             + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -22,7 +22,6 @@ public class TableClass {
             + COLUMN_DESCRIPTION + " TEXT NOT NULL, "
             + COLUMN_TITLE + " TEXT NOT NULL"
             + " );";
-
     public static void onCreate(SQLiteDatabase database) {
         database.execSQL(CREATE_DATABASE);
     }
@@ -33,5 +32,6 @@ public class TableClass {
                 + ", which will destroy all old data");
         database.execSQL(" DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(database);
+
     }
 }

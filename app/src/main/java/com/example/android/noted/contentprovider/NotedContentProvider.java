@@ -27,7 +27,7 @@ public class NotedContentProvider extends ContentProvider {
     public static final int NOTES = 1;
     public static final int NOTE_ID = 2;
     private static final String AUTHORITY = "com.example.android.noted.contentprovider";//fix
-    private static final String BASE_PATH = "noted";//Table name
+    private static final String BASE_PATH = "noted";
     public static final String CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE
             + "/noted";
     public static final String CONTENT_ITEM_TYPE = ContentResolver.CURSOR_ITEM_BASE_TYPE
@@ -35,7 +35,7 @@ public class NotedContentProvider extends ContentProvider {
     public static final UriMatcher sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
 
-    public static final Uri CONTENT_URI = Uri.parse(" content://" + AUTHORITY + "/" + BASE_PATH);
+    public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH);
 
     static {
         sURIMatcher.addURI(AUTHORITY, BASE_PATH, NOTES);
